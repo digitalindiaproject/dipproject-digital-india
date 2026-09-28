@@ -1,19 +1,213 @@
 <!doctype html>
 <html lang="en">
-	<head>
-		<meta charset="UTF-8" />
-		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
-		<title>Hello, World!</title>
-	</head>
-	<body>
-		<h1 id="heading"></h1>
-		<script>
-			fetch('/message')
-				.then((resp) => resp.text())
-				.then((text) => {
-					const h1 = document.getElementById('heading');
-					h1.textContent = text;
-				});
-		</script>
-	</body>
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Digital India Project - Online Filing & Registration</title>
+  <meta name="description" content="Digital India Project - Private online service platform for filing, application and registration assistance services" />
+  <link rel="icon" href="/favicon.ico" />
+  <link rel="stylesheet" href="/css/style.css" />
+</head>
+<body>
+  <!-- Header -->
+  <header>
+    <div class="container">
+      <a href="/" class="logo">Digital India Project</a>
+      <nav>
+        <ul>
+          <li><a href="/">Home</a></li>
+          <li><a href="/services">Services</a></li>
+          <li><a href="/how-it-works">How It Works</a></li>
+          <li><a href="/about">About</a></li>
+          <li><a href="/faq">FAQ</a></li>
+          <li><a href="/contact">Contact</a></li>
+        </ul>
+      </nav>
+      <div class="header-actions">
+        <a href="/login" class="btn btn-outline">Login</a>
+        <a href="/register" class="btn-primary">Get Started</a>
+      </div>
+    </div>
+  </header>
+
+  <!-- Mobile Menu -->
+  <div class="mobile-menu">
+    <a href="/">Home</a>
+    <a href="/services">Services</a>
+    <a href="/how-it-works">How It Works</a>
+    <a href="/about">About</a>
+    <a href="/faq">FAQ</a>
+    <a href="/contact">Contact</a>
+    <a href="/login" class="btn-primary">Login</a>
+  </div>
+
+  <!-- Hero -->
+  <section class="hero">
+    <div class="container">
+      <div class="hero-content">
+        <h1>Online Filing & Registration Made Simple</h1>
+        <p>Submit applications, upload documents, make payments and track your service requests online through Digital India Project. We're a private service provider helping customers with digital filing and registration processes.</p>
+        <div class="hero-actions">
+          <a href="/register" class="btn btn-primary">Get Started</a>
+          <a href="/services" class="btn btn-outline">Explore Services</a>
+        </div>
+      </div>
+      <div class="hero-visual">
+        <div class="visual-grid">
+          <div class="card">
+            <span class="icon">📝</span>
+            <h3>Online Application</h3>
+            <p>Submit forms digitally</p>
+          </div>
+          <div class="card">
+            <span class="icon">📄</span>
+            <h3>Document Upload</h3>
+            <p>Secure document storage</p>
+          </div>
+          <div class="card">
+            <span class="icon">📊</span>
+            <h3>Track Status</h3>
+            <p>Real-time application tracking</p>
+          </div>
+          <div class="card">
+            <span class="icon">💳</span>
+            <h3>Pay Online</h3>
+            <p>Secure payment processing</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Services Section -->
+  <section class="services-section">
+    <div class="container">
+      <h2>Our Services</h2>
+      <div class="services-grid">
+        <div class="service-card">
+          <span class="service-icon">📄</span>
+          <h3>PAN Card Services</h3>
+          <p>Assistance with PAN card applications and updates</p>
+          <a href="/services/pan" class="btn btn-sm">Learn More</a>
+        </div>
+        <div class="service-card">
+          <span class="service-icon">🆔</span>
+          <h3>Aadhaar Update Assistance</h3>
+          <p>Help with Aadhaar card updates and corrections</p>
+          <a href="/services/aadhaar" class="btn btn-sm">Learn More</a>
+        </div>
+        <div class="service-card">
+          <span class="service-icon">🛂</span>
+          <h3>Passport Application Assistance</h3>
+          <p>Guidance for passport application process</p>
+          <a href="/services/passport" class="btn btn-sm">Learn More</a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- How It Works -->
+  <section class="how-it-works">
+    <div class="container">
+      <h2>How It Works</h2>
+      <div class="steps">
+        <div class="step">
+          <div class="step-number">1</div>
+          <h3>Choose a Service</h3>
+          <p>Browse our range of services and select the one you need</p>
+        </div>
+        <div class="step">
+          <div class="step-number">2</div>
+          <h3>Submit Details</h3>
+          <p>Enter your information and upload required documents</p>
+        </div>
+        <div class="step">
+          <div class="step-number">3</div>
+          <h3>Verification & Processing</h3>
+          <p>Our team reviews and processes your request</p>
+        </div>
+        <div class="step">
+          <div class="step-number">4</div>
+          <h3>Track & Complete</h3>
+          <p>Track your request online and receive updates</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Why Choose Us -->
+  <section class="why-choose-us">
+    <div class="container">
+      <h2>Why Digital India Project</h2>
+      <div class="features">
+        <div class="feature">
+          <span class="icon">🟢</span>
+          <h3>Convenient Online Process</h3>
+          <p>Apply from anywhere, anytime — no need to visit offices</p>
+        </div>
+        <div class="feature">
+          <span class="icon">🔒</span>
+          <h3>Secure Document Handling</h3>
+          <p>Your documents are stored securely with encryption</p>
+        </div>
+        <div class="feature">
+          <span class="icon">📊</span>
+          <h3>Application Tracking</h3>
+          <p>Track your application status in real-time</p>
+        </div>
+        <div class="feature">
+          <span class="icon">🤝</span>
+          <h3>Customer Support</h3>
+          <p>We're here to help when you need it</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer>
+    <div class="container">
+      <div class="footer-grid">
+        <div class="footer-logo">
+          <a href="/">Digital India Project</a>
+          <p>Private online service platform for filing and registration assistance</p>
+        </div>
+        <div>
+          <h4>Company</h4>
+          <ul>
+            <li><a href="/about">About</a></li>
+            <li><a href="/services">Services</a></li>
+            <li><a href="/how-it-works">How It Works</a></li>
+          </ul>
+        </div>
+        <div>
+          <h4>Legal</h4>
+          <ul>
+            <li><a href="/privacy">Privacy Policy</a></li>
+            <li><a href="/terms">Terms & Conditions</a></li>
+            <li><a href="/refund">Refund & Cancellation</a></li>
+          </ul>
+        </div>
+        <div>
+          <h4>Contact</h4>
+          <ul>
+            <li><a href="/contact">Contact</a></li>
+            <li><a href="/faq">FAQ</a></li>
+          </ul>
+        </div>
+      </div>
+      <div class="footer-bottom">
+        <p>&copy; 2026 Digital India Project. Private service provider. Not a government department.</p>
+      </div>
+    </div>
+  </footer>
+
+  <!-- Hindi Language Switcher -->
+  <div class="language-switcher">
+    <span>Language: </span>
+    <a href="/hi">हिंदी</a> | <a href="/en">English</a>
+  </div>
+
+  <script src="/js/main.js"></script>
+</body>
 </html>
