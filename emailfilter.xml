@@ -1,0 +1,97 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<feed xmlns='http://www.w3.org/2005/Atom'
+      xmlns:apps='http://schemas.google.com/apps/2006'>
+  <title>Mail Filters</title>
+
+  <entry>
+    <category term='filter'/>
+    <title>Payments</title>
+    <apps:property name='hasTheWord' value='to:payments@digitalindiaproject.com'/>
+    <apps:property name='label' value='DIP/Payments'/>
+  </entry>
+
+  <entry>
+    <category term='filter'/>
+    <title>Accounts</title>
+    <apps:property name='hasTheWord' value='to:accounts@digitalindiaproject.com'/>
+    <apps:property name='label' value='DIP/Accounts'/>
+  </entry>
+
+  <entry>
+    <category term='filter'/>
+    <title>Applications</title>
+    <apps:property name='hasTheWord' value='to:applications@digitalindiaproject.com'/>
+    <apps:property name='label' value='DIP/Applications'/>
+  </entry>
+
+  <entry>
+    <category term='filter'/>
+    <title>Documents</title>
+    <apps:property name='hasTheWord' value='to:documents@digitalindiaproject.com'/>
+    <apps:property name='label' value='DIP/Documents'/>
+  </entry>
+
+  <entry>
+    <category term='filter'/>
+    <title>Complaints</title>
+    <apps:property name='hasTheWord' value='to:complaints@digitalindiaproject.com'/>
+    <apps:property name='label' value='DIP/Complaints'/>
+  </entry>
+
+  <entry>
+    <category term='filter'/>
+    <title>Admin</title>
+    <apps:property name='hasTheWord' value='to:admin@digitalindiaproject.com'/>
+    <apps:property name='label' value='DIP/Admin'/>
+  </entry>
+
+  <entry>
+    <category term='filter'/>
+    <title>Verification</title>
+    <apps:property name='hasTheWord' value='to:verifications@digitalindiaproject.com'/>
+    <apps:property name='label' value='DIP/Verification'/>
+  </entry>
+
+  <entry>
+    <category term='filter'/>
+    <title>Privacy</title>
+    <apps:property name='hasTheWord' value='to:privacy@digitalindiaproject.com'/>
+    <apps:property name='label' value='DIP/Privacy'/>
+  </entry>
+
+  <entry>
+    <category term='filter'/>
+    <title>Contact</title>
+    <apps:property name='hasTheWord' value='to:contact@digitalindiaproject.com'/>
+    <apps:property name='label' value='DIP/Contact'/>
+  </entry>
+
+  <entry>
+    <category term='filter'/>
+    <title>Hello</title>
+    <apps:property name='hasTheWord' value='to:hello@digitalindiaproject.com'/>
+    <apps:property name='label' value='DIP/Hello'/>
+  </entry>
+
+  <entry>
+    <category term='filter'/>
+    <title>Info</title>
+    <apps:property name='hasTheWord' value='to:info@digitalindiaproject.com'/>
+    <apps:property name='label' value='DIP/Info'/>
+  </entry>
+
+  <entry>
+    <category term='filter'/>
+    <title>Support</title>
+    <apps:property name='hasTheWord' value='to:support@digitalindiaproject.com'/>
+    <apps:property name='label' value='DIP/Support'/>
+  </entry>
+
+  <entry>
+    <category term='filter'/>
+    <title>No Reply</title>
+    <apps:property name='hasTheWord' value='to:noreply@digitalindiaproject.com'/>
+    <apps:property name='label' value='DIP/No Reply'/>
+  </entry>
+
+</feed>

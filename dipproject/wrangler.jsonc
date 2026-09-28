@@ -32,7 +32,7 @@
 	/** R2 Bucket Binding for document storage */
 	"DOCUMENTS_BUCKET": {
 		"binding": "DOCUMENTS_BUCKET",
-		"account_id": "@account_id",
+		"account_id": "9432b78673d8510872df7430cac3445a",
 		"bucket_name": "documents"
 	},
 	/** Environment Variables
