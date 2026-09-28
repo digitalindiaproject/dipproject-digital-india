@@ -1,0 +1,192 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Digital India Project — Online Filing &amp; Document Services</title>
+<meta name="description" content="Submit applications and documents online and track your service requests. Independent private service provider.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Mukta:wght@400;500;700;800&display=swap" rel="stylesheet">
+<style>
+:root{--navy:#13296b;--navy-2:#1d3a8a;--saffron:#e8790c;--green:#178a37;--bg:#f6f7fa;--card:#fff;--text:#161b2e;--muted:#5a6280;--line:#dfe3ee;--soft:#eaeefb;
+box-sizing:border-box;padding-top:env(safe-area-inset-top,0px);padding-bottom:env(safe-area-inset-bottom,0px)}
+@media (prefers-color-scheme:dark){:root:not([data-theme="light"]){--navy:#8fa8ff;--navy-2:#a9bcff;--saffron:#ff9d3d;--green:#4cc36c;--bg:#0f1220;--card:#181c30;--text:#eef0f8;--muted:#a3aac6;--line:#2a3050;--soft:#1e2444}}
+:root[data-theme="dark"]{--navy:#8fa8ff;--navy-2:#a9bcff;--saffron:#ff9d3d;--green:#4cc36c;--bg:#0f1220;--card:#181c30;--text:#eef0f8;--muted:#a3aac6;--line:#2a3050;--soft:#1e2444}
+html{scroll-padding-top:env(safe-area-inset-top,0px);scroll-behavior:smooth}
+*,*::before,*::after{box-sizing:border-box}
+body{margin:0;background:var(--bg);color:var(--text);font-family:"Mukta","Noto Sans Devanagari","Segoe UI",system-ui,sans-serif;font-size:17px;line-height:1.6}
+a{color:inherit}
+:focus-visible{outline:3px solid var(--saffron);outline-offset:2px;border-radius:6px}
+.wrap{max-width:1120px;margin:0 auto;padding:0 20px}
+header{background:var(--card);border-bottom:1px solid var(--line);position:sticky;top:env(safe-area-inset-top,0px);z-index:5}
+.bar{display:flex;align-items:center;gap:16px;height:64px}
+.logo{display:flex;align-items:center;gap:10px;text-decoration:none;font-weight:800;color:var(--navy);font-size:19px;line-height:1.1}
+.mark{width:38px;height:38px;border-radius:9px;background:var(--navy);display:grid;place-items:center;position:relative}
+.mark span{color:var(--card);font-weight:800;font-size:15px;letter-spacing:.5px}
+.mark i{position:absolute;top:-3px;right:-3px;width:10px;height:10px;border-radius:50%;background:var(--saffron)}
+nav{display:none;gap:22px;margin-left:auto}
+nav a{text-decoration:none;color:var(--muted);font-weight:500}
+nav a:hover{color:var(--navy)}
+.tools{display:flex;gap:8px;margin-left:auto}
+.btn{display:inline-flex;align-items:center;justify-content:center;min-height:44px;padding:0 18px;border-radius:10px;border:1.5px solid var(--navy);background:transparent;color:var(--navy);font:inherit;font-weight:700;text-decoration:none;cursor:pointer}
+.btn.p{background:var(--navy);color:var(--card)}
+.btn.s{min-height:38px;padding:0 12px;border-color:var(--line);color:var(--muted);font-weight:500}
+.btn[aria-pressed="true"]{border-color:var(--navy);color:var(--navy)}
+@media(min-width:900px){nav{display:flex}.tools{margin-left:0}}
+.hero{padding:44px 0 36px}
+.hero .grid{display:grid;gap:32px}
+h1{font-size:clamp(30px,6vw,52px);line-height:1.12;margin:0 0 16px;color:var(--navy);font-weight:800;max-width:14em}
+.lead{color:var(--muted);max-width:34em;margin:0 0 24px;font-size:18px}
+.cta{display:flex;gap:12px;flex-wrap:wrap}
+.status{background:var(--card);border:1px solid var(--line);border-radius:16px;padding:22px;box-shadow:0 6px 24px rgba(19,41,107,.08)}
+.status h2{margin:0 0 4px;font-size:18px}
+.tag{font-size:13px;color:var(--muted);margin:0 0 16px}
+.tl{list-style:none;margin:0;padding:0}
+.tl li{position:relative;padding:0 0 18px 30px;color:var(--muted)}
+.tl li::before{content:"";position:absolute;left:0;top:5px;width:14px;height:14px;border-radius:50%;border:2px solid var(--line);background:var(--card)}
+.tl li::after{content:"";position:absolute;left:6px;top:21px;bottom:-3px;width:2px;background:var(--line)}
+.tl li:last-child::after{display:none}
+.tl li.done::before{background:var(--green);border-color:var(--green)}
+.tl li.now::before{background:var(--saffron);border-color:var(--saffron)}
+.tl li.done,.tl li.now{color:var(--text)}
+.tl b{display:block;font-size:16px}
+.tl small{font-size:13px}
+.track{display:flex;gap:8px;margin-top:4px;flex-wrap:wrap}
+.track input{flex:1 1 180px;min-height:44px;border:1.5px solid var(--line);border-radius:10px;padding:0 12px;background:var(--bg);color:var(--text);font:inherit}
+@media(min-width:900px){.hero .grid{grid-template-columns:1.15fr .85fr;align-items:center}}
+section{padding:40px 0}
+h2.t{font-size:clamp(24px,4vw,34px);margin:0 0 8px;color:var(--navy);font-weight:800}
+.sub{color:var(--muted);margin:0 0 24px;max-width:38em}
+.svc{display:grid;gap:14px;grid-template-columns:repeat(auto-fill,minmax(250px,1fr))}
+.card{background:var(--card);border:1px solid var(--line);border-radius:14px;padding:20px;display:flex;flex-direction:column;gap:8px}
+.card h3{margin:0;font-size:19px}
+.card p{margin:0;color:var(--muted);font-size:16px;flex:1}
+.ic{width:40px;height:40px;border-radius:10px;background:var(--soft);color:var(--navy);display:grid;place-items:center;font-weight:800}
+.links{display:flex;gap:14px;margin-top:6px;font-weight:700}
+.links a{color:var(--navy)}
+.note{font-size:14px;color:var(--muted);margin-top:16px;border-left:3px solid var(--saffron);padding-left:12px}
+.steps{display:grid;gap:14px;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));counter-reset:s;list-style:none;padding:0;margin:0}
+.steps li{counter-increment:s;background:var(--card);border:1px solid var(--line);border-radius:14px;padding:20px}
+.steps li::before{content:counter(s);display:grid;place-items:center;width:34px;height:34px;border-radius:50%;background:var(--navy);color:var(--card);font-weight:800;margin-bottom:10px}
+.steps b{display:block;font-size:18px}
+.steps span{color:var(--muted);font-size:16px}
+.band{background:var(--soft)}
+.ben{display:grid;gap:10px 28px;grid-template-columns:repeat(auto-fit,minmax(260px,1fr));list-style:none;padding:0;margin:0}
+.ben li{padding-left:28px;position:relative}
+.ben li::before{content:"";position:absolute;left:0;top:9px;width:16px;height:8px;border-left:3px solid var(--green);border-bottom:3px solid var(--green);transform:rotate(-45deg) scale(.9)}
+footer{background:var(--navy);color:#fff;padding:36px 0 28px;font-size:15px}
+:root:not([data-theme="light"]) footer{color:var(--text)}
+@media (prefers-color-scheme:dark){footer{background:#0a0d1c}}
+footer .cols{display:grid;gap:24px;grid-template-columns:repeat(auto-fit,minmax(200px,1fr))}
+footer h4{margin:0 0 8px;font-size:16px}
+footer a{display:block;text-decoration:none;opacity:.9;padding:3px 0}
+footer a:hover{text-decoration:underline}
+.disc{border-top:1px solid rgba(255,255,255,.25);margin-top:24px;padding-top:16px;opacity:.85;font-size:14px}
+@media(prefers-reduced-motion:reduce){html{scroll-behavior:auto}}
+</style>
+</head>
+<body>
+<header>
+ <div class="wrap bar">
+  <a class="logo" href="#top" aria-label="Digital India Project home"><span class="mark" aria-hidden="true"><span>DIP</span><i></i></span><span>Digital India<br>Project</span></a>
+  <nav aria-label="Main">
+   <a href="#services" data-i="nav_services">Services</a>
+   <a href="#how" data-i="nav_how">How It Works</a>
+   <a href="#track" data-i="nav_track">Track Application</a>
+   <a href="#about" data-i="nav_about">About</a>
+   <a href="#contact" data-i="nav_contact">Contact</a>
+  </nav>
+  <div class="tools">
+   <button class="btn s" id="lang" type="button" aria-label="Switch language">हिन्दी</button>
+   <a class="btn" href="#login" data-i="login">Login</a>
+   <a class="btn p" href="#services" data-i="apply_now">Apply Now</a>
+  </div>
+ </div>
+</header>
+
+<main id="top">
+<div class="hero"><div class="wrap grid">
+ <div>
+  <h1 data-i="h1">Online Filing &amp; Document Services, Made Simple</h1>
+  <p class="lead" data-i="lead">Submit your application and documents online, then follow every step of your service request from one place.</p>
+  <div class="cta"><a class="btn p" href="#services" data-i="apply_online">Apply Online</a><a class="btn" href="#services" data-i="view_services">View Services</a></div>
+ </div>
+ <aside class="status" id="track" aria-labelledby="st">
+  <h2 id="st" data-i="track_h">Track your application</h2>
+  <p class="tag" data-i="track_tag">Example of the status timeline you will see. Sample only.</p>
+  <ol class="tl">
+   <li class="done"><b data-i="s1">Submitted</b><small data-i="s1d">We received your application</small></li>
+   <li class="done"><b data-i="s2">Documents verified</b><small data-i="s2d">Your uploads were checked</small></li>
+   <li class="now"><b data-i="s3">Processing</b><small data-i="s3d">Your application is being handled</small></li>
+   <li><b data-i="s4">Completed</b><small data-i="s4d">You are notified when it is done</small></li>
+  </ol>
+  <form class="track" onsubmit="return false">
+   <label for="an" class="sr" style="position:absolute;left:-9999px" data-i="an_l">Application number</label>
+   <input id="an" placeholder="DIP-2026-000001" autocomplete="off">
+   <button class="btn p" type="button" data-i="track_btn">Track</button>
+  </form>
+ </aside>
+</div></div>
+
+<section id="services"><div class="wrap">
+ <h2 class="t" data-i="svc_h">Our services</h2>
+ <p class="sub" data-i="svc_sub">Choose a service to see required documents, fees and steps.</p>
+ <div class="svc" id="svcgrid"></div>
+ <p class="note" data-i="svc_note">Preview note: these are development example services. On the live site this list loads from the database and is managed by the admin.</p>
+</div></section>
+
+<section id="how" class="band"><div class="wrap">
+ <h2 class="t" data-i="how_h">How it works</h2>
+ <p class="sub" data-i="how_sub">Four steps from choosing a service to getting it done.</p>
+ <ol class="steps">
+  <li><b data-i="h1t">Choose a service</b><span data-i="h1d">Pick the service you need and read what it requires.</span></li>
+  <li><b data-i="h2t">Submit your details</b><span data-i="h2d">Fill in a short online form.</span></li>
+  <li><b data-i="h3t">Upload required documents</b><span data-i="h3d">Add your documents securely from your phone or computer.</span></li>
+  <li><b data-i="h4t">Track your application</b><span data-i="h4d">See every status update in your dashboard.</span></li>
+ </ol>
+</div></section>
+
+<section id="about"><div class="wrap">
+ <h2 class="t" data-i="ben_h">What you get</h2>
+ <p class="sub" data-i="ben_sub">A simple, transparent process.</p>
+ <ul class="ben">
+  <li data-i="b1">Online application process</li>
+  <li data-i="b2">Application tracking with status updates</li>
+  <li data-i="b3">Secure document upload</li>
+  <li data-i="b4">Government fees, service charges and taxes shown separately</li>
+  <li data-i="b5">Customer dashboard for all your applications</li>
+  <li data-i="b6">Support by email</li>
+ </ul>
+</div></section>
+</main>
+
+<footer id="contact"><div class="wrap">
+ <div class="cols">
+  <div><h4>Digital India Project</h4><span data-i="f_tag">Online Filing &amp; Document Services</span><br><span>Silvassa, Dadra and Nagar Haveli and Daman and Diu</span></div>
+  <div><h4 data-i="f_links">Quick links</h4><a href="#services" data-i="nav_services">Services</a><a href="#how" data-i="nav_how">How It Works</a><a href="#track" data-i="nav_track">Track Application</a></div>
+  <div><h4 data-i="f_legal">Legal</h4><a href="#privacy" data-i="f_priv">Privacy Policy</a><a href="#terms" data-i="f_terms">Terms &amp; Conditions</a><a href="#refund" data-i="f_ref">Refund Policy</a></div>
+  <div><h4 data-i="nav_contact">Contact</h4><a href="mailto:hello@digitalindiaproject.com">hello@digitalindiaproject.com</a><a href="mailto:support@digitalindiaproject.com">support@digitalindiaproject.com</a></div>
+ </div>
+ <div class="disc"><span data-i="disc">Digital India Project is an independent private service provider and is not a government department or portal.</span><br>© Digital India Project</div>
+</div></footer>
+
+<script>
+var T={en:{nav_services:"Services",nav_how:"How It Works",nav_track:"Track Application",nav_about:"About",nav_contact:"Contact",login:"Login",apply_now:"Apply Now",h1:"Online Filing & Document Services, Made Simple",lead:"Submit your application and documents online, then follow every step of your service request from one place.",apply_online:"Apply Online",view_services:"View Services",track_h:"Track your application",track_tag:"Example of the status timeline you will see. Sample only.",s1:"Submitted",s1d:"We received your application",s2:"Documents verified",s2d:"Your uploads were checked",s3:"Processing",s3d:"Your application is being handled",s4:"Completed",s4d:"You are notified when it is done",an_l:"Application number",track_btn:"Track",svc_h:"Our services",svc_sub:"Choose a service to see required documents, fees and steps.",svc_note:"Preview note: these are development example services. On the live site this list loads from the database and is managed by the admin.",how_h:"How it works",how_sub:"Four steps from choosing a service to getting it done.",h1t:"Choose a service",h1d:"Pick the service you need and read what it requires.",h2t:"Submit your details",h2d:"Fill in a short online form.",h3t:"Upload required documents",h3d:"Add your documents securely from your phone or computer.",h4t:"Track your application",h4d:"See every status update in your dashboard.",ben_h:"What you get",ben_sub:"A simple, transparent process.",b1:"Online application process",b2:"Application tracking with status updates",b3:"Secure document upload",b4:"Government fees, service charges and taxes shown separately",b5:"Customer dashboard for all your applications",b6:"Support by email",f_tag:"Online Filing & Document Services",f_links:"Quick links",f_legal:"Legal",f_priv:"Privacy Policy",f_terms:"Terms & Conditions",f_ref:"Refund Policy",disc:"Digital India Project is an independent private service provider and is not a government department or portal.",details:"View Details",apply:"Apply Now"},
+hi:{nav_services:"सेवाएं",nav_how:"प्रक्रिया",nav_track:"आवेदन ट्रैक करें",nav_about:"हमारे बारे में",nav_contact:"संपर्क",login:"लॉगिन",apply_now:"अभी आवेदन करें",h1:"ऑनलाइन फाइलिंग और दस्तावेज़ सेवाएं, अब आसान",lead:"अपना आवेदन और दस्तावेज़ ऑनलाइन जमा करें और अपने सेवा अनुरोध की हर स्थिति एक ही जगह देखें।",apply_online:"ऑनलाइन आवेदन करें",view_services:"सेवाएं देखें",track_h:"अपना आवेदन ट्रैक करें",track_tag:"स्थिति टाइमलाइन का उदाहरण। केवल नमूना।",s1:"जमा किया गया",s1d:"हमें आपका आवेदन मिल गया",s2:"दस्तावेज़ सत्यापित",s2d:"आपके दस्तावेज़ जांचे गए",s3:"प्रक्रिया में",s3d:"आपके आवेदन पर काम चल रहा है",s4:"पूर्ण",s4d:"पूरा होने पर आपको सूचना मिलेगी",an_l:"आवेदन संख्या",track_btn:"ट्रैक करें",svc_h:"हमारी सेवाएं",svc_sub:"आवश्यक दस्तावेज़, शुल्क और चरण देखने के लिए सेवा चुनें।",svc_note:"प्रीव्यू नोट: ये विकास के उदाहरण हैं। लाइव साइट पर यह सूची डेटाबेस से आएगी और एडमिन द्वारा प्रबंधित होगी।",how_h:"यह कैसे काम करता है",how_sub:"सेवा चुनने से काम पूरा होने तक चार चरण।",h1t:"सेवा चुनें",h1d:"अपनी ज़रूरत की सेवा चुनें और उसकी आवश्यकताएं पढ़ें।",h2t:"अपनी जानकारी भरें",h2d:"एक छोटा ऑनलाइन फॉर्म भरें।",h3t:"आवश्यक दस्तावेज़ अपलोड करें",h3d:"अपने फोन या कंप्यूटर से दस्तावेज़ सुरक्षित रूप से जोड़ें।",h4t:"आवेदन ट्रैक करें",h4d:"अपने डैशबोर्ड में हर अपडेट देखें।",ben_h:"आपको क्या मिलता है",ben_sub:"एक सरल और पारदर्शी प्रक्रिया।",b1:"ऑनलाइन आवेदन प्रक्रिया",b2:"स्थिति अपडेट के साथ आवेदन ट्रैकिंग",b3:"सुरक्षित दस्तावेज़ अपलोड",b4:"सरकारी शुल्क, सेवा शुल्क और कर अलग-अलग दिखाए जाते हैं",b5:"आपके सभी आवेदनों के लिए ग्राहक डैशबोर्ड",b6:"ईमेल से सहायता",f_tag:"ऑनलाइन फाइलिंग और दस्तावेज़ सेवाएं",f_links:"त्वरित लिंक",f_legal:"कानूनी",f_priv:"गोपनीयता नीति",f_terms:"नियम और शर्तें",f_ref:"रिफंड नीति",disc:"डिजिटल इंडिया प्रोजेक्ट एक स्वतंत्र निजी सेवा प्रदाता है और सरकारी विभाग या पोर्टल नहीं है।",details:"विवरण देखें",apply:"आवेदन करें"}};
+var S=[["PAN","PAN Card Services","पैन कार्ड सेवाएं","Apply for a new PAN or request corrections online.","नया पैन बनवाएं या सुधार के लिए ऑनलाइन आवेदन करें।"],
+["PP","Passport Assistance","पासपोर्ट सहायता","Help filling and submitting your passport application.","पासपोर्ट आवेदन भरने और जमा करने में सहायता।"],
+["NC","Name Change / Gazette Assistance","नाम परिवर्तन / गजट सहायता","Guidance and filing support for name change applications.","नाम परिवर्तन आवेदनों के लिए मार्गदर्शन और फाइलिंग सहायता।"],
+["AD","Aadhaar Assistance","आधार सहायता","Support with Aadhaar-related online applications.","आधार से जुड़े ऑनलाइन आवेदनों में सहायता।"],
+["GF","Online Government Forms","ऑनलाइन सरकारी फॉर्म","Fill and submit online forms with your documents.","अपने दस्तावेज़ों के साथ ऑनलाइन फॉर्म भरें और जमा करें।"],
+["DR","Document Registration","दस्तावेज़ पंजीकरण","Assistance with document registration applications.","दस्तावेज़ पंजीकरण आवेदनों में सहायता।"]];
+var L="en";try{L=localStorage.getItem("dip_lang")||"en"}catch(e){}
+function render(){var d=T[L];document.documentElement.lang=L;
+document.querySelectorAll("[data-i]").forEach(function(n){var k=n.getAttribute("data-i");if(d[k])n.textContent=d[k]});
+document.getElementById("lang").textContent=L==="en"?"हिन्दी":"English";
+var g=document.getElementById("svcgrid");g.innerHTML=S.map(function(s){var i=L==="en"?1:2;return '<article class="card"><div class="ic" aria-hidden="true">'+s[0]+'</div><h3>'+s[i]+'</h3><p>'+s[i+2]+'</p><div class="links"><a href="#services">'+d.details+'</a><a href="#login">'+d.apply+'</a></div></article>'}).join("")}
+document.getElementById("lang").onclick=function(){L=L==="en"?"hi":"en";try{localStorage.setItem("dip_lang",L)}catch(e){}render()};
+render();
+</script>
+</body>
+</html>
